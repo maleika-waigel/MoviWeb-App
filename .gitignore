@@ -225,3 +225,5 @@ frontend/.DS_Store
 todo.md
 .env
 test_data_manager.py
+
+*.db
