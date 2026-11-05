@@ -9,7 +9,7 @@ load_dotenv()
 
 OMDB_API_KEY = os.getenv("OMDB_API_KEY")
 
-API_URL = f"https://www.omdbapi.com/?apikey={OMDB_API_KEY}&"
+API_URL = "https://www.omdbapi.com/"
 
 
 class DataManager:
@@ -42,16 +42,25 @@ class DataManager:
 
         return movies
 
-    def add_movie(self, title, user_id):
+    def add_movie(self, title, user_id, year=None):
         """
         Fügt einen neuen Film zu der Favoriten-Datenbank des Nutzers hinzu.
         :param:
             title: Titel des Films, der hinzugefügt werden soll
             user_id: die ID des Nutzers, zu dessen Favoriten der Film hinzugefügt wird
-        :return:
+            year: Optionales Erscheinungsjahr zur genaueren Filmsuche
+        :return: Erstelltes Filmobjekt oder None, falls kein Film gefunden wurde
         """
+        params = {
+            "apikey": OMDB_API_KEY,
+            "t": title
+        }
+
+        if year:
+            params["y"] = year
+
         try:
-            response = requests.get(API_URL + "t=" + title, timeout=10)
+            response = requests.get(API_URL, params=params, timeout=10)
             response.raise_for_status()
             data = response.json()
 

@@ -1,4 +1,3 @@
-/* Allgemeine Einstellungen */
 * {
     box-sizing: border-box;
 }
@@ -10,23 +9,55 @@ body {
     color: #252525;
 }
 
-/* Header */
-header {
-    background-color: #252a34;
-    color: white;
-    padding: 18px 20px;
+.container{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 50px;
 }
 
-header h1 {
-    margin: 0;
+header {
+    background-color: #2563eb;
+    color: white;
+    padding: 18px 20px;
+    width: 100%;
+}
+
+nav{
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a{
+    color: #fff;
+    text-decoration: none;
+}
+
+h1 {
+    margin: 30px 0;
     font-size: 21px;
 }
 
-/* Hauptbereich */
 main {
     width: 100%;
     margin: 30px auto;
     padding: 0 20px;
+}
+
+.back-link{
+    margin: 20px 0 0;
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.back-link:hover {
+    text-decoration: underline;
 }
 
 h2 {
@@ -34,18 +65,89 @@ h2 {
     font-size: 22px;
 }
 
-/* Nutzerkarten */
+
 .user-list {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 30px;
+}
+
+.add_content button{
+   background: #2563eb;
+}
+
+.add_content_input{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add_content_input input{
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #666;
+    font-size: 14px;
+}
+
+.user-list form input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 8px;
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+}
+
+form .update-button,
+form .delete-button,
+.add_content button,
+.btn{
+    width: 100%;
+    padding: 7px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    margin-top: 3px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    display: inline-block;
+}
+form .update-button:hover,
+form .delete-button:hover,
+.add_content button:hover{
+    -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.42);
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.42);
+}
+form .update-button,
+.btn{
+    background: #2563eb;
+}
+.btn{
+    text-decoration: none;
+    text-align: center;
+}
+form .delete-button{
+    background: red;
 }
 
 .user-card {
-    background-color: white;
     padding: 20px;
+    background: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.user-card img{
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 10px;
 }
 
 .user-card h3 {
@@ -62,14 +164,21 @@ h2 {
     color: #666;
 }
 
+.add_content{
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
 /* Tablets */
 @media (min-width: 600px) {
     header {
-        padding: 20px 30px;
+        padding: 40px 30px;
     }
 
-    header h1 {
-        font-size: 24px;
+    h1 {
+        font-size: 28px;
     }
 
     main {
@@ -84,17 +193,30 @@ h2 {
 
     .user-list {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
     }
 
-    .user-card {
-        padding: 25px;
-    }
 }
 
 /* Desktop */
 @media (min-width: 900px) {
     .user-list {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .user-list form input {
+        text-align: left;
+    }
+    .user-card {
+        text-align: left;
+    }
+
+    .add_content_input{
+        flex-wrap: nowrap;
+    }
+
+    .add_content_input input{
+        width: 50%;
+    }
+    .new_user input{
+        width: 100%!important;
     }
 }

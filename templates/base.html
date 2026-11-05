@@ -6,10 +6,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <header>
+        <nav><a href="{{ url_for('index') }}">🎬 MovieApp</a></nav>
+    </header>
 
     <main class="container">
         {% block content %}{% endblock %}
-    </main>`
+    </main>
 
 </body>
 </html>
