@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
 
 from data_manager import DataManager
 from models import db, Movie
@@ -19,6 +19,12 @@ data_manager = DataManager()
 @app.route('/')
 def home():
     return "Welcome to MoviWeb App!"
+
+
+@app.route('/users')
+def list_users():
+    users = data_manager.get_users()
+    return render_template('users.html', users=users)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,100 @@
+/* Allgemeine Einstellungen */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f5f7;
+    color: #252525;
+}
+
+/* Header */
+header {
+    background-color: #252a34;
+    color: white;
+    padding: 18px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 21px;
+}
+
+/* Hauptbereich */
+main {
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+/* Nutzerkarten */
+.user-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.user-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.user-card h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.user-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+.empty-message {
+    color: #666;
+}
+
+/* Tablets */
+@media (min-width: 600px) {
+    header {
+        padding: 20px 30px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    main {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 30px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .user-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .user-card {
+        padding: 25px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+    .user-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
