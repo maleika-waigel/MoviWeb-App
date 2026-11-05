@@ -17,7 +17,7 @@ data_manager = DataManager()
 
 
 @app.route('/')
-def home():
+def index():
     """
     Die Startseite. Zeigt eine Liste aller registrierten Nutzer
     und ein Formular zum Hinzufügen neuer Nutzer.
@@ -25,7 +25,7 @@ def home():
     :return:
     """
     users = data_manager.get_users()
-    return render_template('users.html', users=users)
+    return render_template('index.html', users=users)
 
 
 @app.route('/users', methods=['POST'])
